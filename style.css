@@ -1,0 +1,124 @@
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to right, #232526, #414345);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    background-color: white;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 20px 30px -5px rgba(0, 0, 0, .6);
+}
+
+/*display*/
+.calculator-display {
+    background-color: black;
+    color: white;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.calculator-display h1 {
+    margin: 0;
+    padding: 25px;
+    font-size: 45px;
+    font-family: 'Lucida Console', sans-serif;
+    font-weight: 100;
+    /*for horizontally access and set to auto , meaning that it will give a scroll bar if necessary*/
+    overflow-x: auto;
+}
+
+/*custom scroll bar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/*buttons*/
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+/*keep in mind that for button, they have their own font properties*/
+button {
+    min-height: 50px;
+    font-size: 20px;
+    font-weight: 100;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #c7c7c7;
+}
+
+button:hover{
+    filter: brightness(110%);
+}
+
+button:active{
+    transform: translateY(2px);
+}
+
+button:focus{
+    outline: none;
+}
+
+.operator{
+    background-color: grey;
+    color: white;
+    font-size: 30px;
+}
+
+.clear{
+    background-color: #ff3333;
+    color: white;
+}
+
+.clear:hover{
+    filter: brightness(90%);
+}
+
+.equal-sign {
+    grid-column: -2;
+    grid-row: 2 / span 4;
+    background-color: rgb(13, 206, 87);
+}
+
+/*media query : large smartphone (vertical)*/
+@media screen and (max-width: 600px) {
+    .calculator{
+        /* and that's why we use fr (fraction) to setup ez*/
+        width: 95%;
+    }
+}
